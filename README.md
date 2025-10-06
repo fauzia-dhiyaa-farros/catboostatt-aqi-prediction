@@ -14,7 +14,6 @@ By linking spatiotemporal correlations between pollutants and weather elements, 
 ```
 conda env create -f environment.yml
 conda activate aqi-env
-pip install -r requirements.txt
 
 ```
 
