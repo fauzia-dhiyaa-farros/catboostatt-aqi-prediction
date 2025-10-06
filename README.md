@@ -10,7 +10,6 @@ This research provides accurate assessments of PM2.5 levels across urban areas, 
   
 By linking spatiotemporal correlations between pollutants and weather elements, this approach enhances prediction accuracy and strengthens decision-making for fast-response systems in Jakarta’s most vulnerable areas.
 
----
 ## Setup Environment - Anaconda
 ```
 conda env create -f environment.yml
