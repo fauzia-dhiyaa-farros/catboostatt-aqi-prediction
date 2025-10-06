@@ -3,6 +3,7 @@ import io
 import math
 import pandas as pd
 import numpy as np    
+import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import plotly.express as px
