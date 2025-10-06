@@ -16,4 +16,4 @@ streamlit run catboostatt_dashboard.py
 ```
 
 
-('Copyright (©) Fauzia Dhiyaa' Farros 2025')
+Copyright © Fauzia Dhiyaa' Farros 2025
