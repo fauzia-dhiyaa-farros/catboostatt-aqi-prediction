@@ -1,27 +1,31 @@
-## Spatiotemporal Air Quality Index (AQI) Modeling in DKI Jakarta with Categorical Boosting and Attention Mechanism
-In densely populated urban areas like DKI Jakarta, air pollution—especially fine particulate matter (PM2.5)—poses serious health risks, contributing to bronchitis, asthma, heart disease, stroke, and even death [1]. The interplay of multiple pollutants, weather variability, traffic emissions, and industrial activities complicates air quality dynamics [2], [13], prompting recent research to treat pollution as a spatiotemporal problem rather than isolated measurements [3], [14]. This approach captures both temporal patterns (e.g., hourly or daily changes) and spatial relationships across monitoring stations. Traditional statistical methods often fail to model these complex, nonlinear patterns, whereas machine learning models like Categorical Boosting handle high-dimensional structured data efficiently using histogram-based binning and a leaf-wise growth strategy [4], [15]. However, Categorical Boosting alone may not effectively prioritize temporal or environmental features unless explicitly guided. To address this, attention mechanisms—originally from natural language processing—are now applied in time series forecasting to emphasize critical features such as sudden weather shifts or pollution spikes [5], [6], [16], [17], [18]. Combining Categorical Boosting with attention improves interpretability and predictive accuracy [6], [9], [10], [19], [20], though many models remain limited to low-resolution data or single-station inputs [7], [21]. This study proposes a hybrid attention–Categorical Boosting framework to model multivariate spatiotemporal correlations of PM2.5 in DKI Jakarta, using hourly climate data from five satellite-derived sources and pollutant data (PM2.5, PM10, NO₂, SO₂, CO, O₃) from five ground stations (2020–2024). An attention mechanism is applied after preprocessing and temporal segmentation to highlight key variables at each timestep, followed by Categorical Boosting to model nonlinear interactions. The method enhances interpretability and forecasting performance, offering insights for data-driven policymaking and urban air quality management.
+## Spatio-Temporal Prediction Modeling Of Air Quality Index (AQI) in DKI Jakarta using Catboost and Extreme Feature Attention Mechanism
+This study aims to develop an Air Quality Index (AQI) prediction model for DKI Jakarta by combining the CatBoost Regressor algorithm with a Feature Attention Weighting mechanism that assigns attention weights of 0.5 for normal conditions and 1.0 for extreme conditions. The dataset consists of AQI data from DKI Jakarta and meteorological data from GHCN-H NOAA for the 2020–2024 period, totaling 106,197 entries, including PM₂.₅, PM₁₀, SO₂, CO, O₃, NO₂, temperature, 24 hour rainfall, relative humidity, wind direction, wind speed, and dew point temperature. The model was trained using time sequence windows (1, 8, 12, 24, and 48 hours) and a 70:15:15 (train:validation:test) data split, and compared against seven benchmark models: Linear Regression, Lasso Regression, LightGBM, FNN, CNN-LSTM, GRU-LSTM, and Transformer. The best performance was achieved at the 48-hour window with RMSE = 0.002 and MAPE = 0.00%, where the Friedman test indicated a significant difference (p = 0.010) and the Pairwise Test confirmed significant variations in RMSE (χ² = 11.200; p = 0.024), MAE (χ² = 13.280; p = 0.010), and MAPE (χ² = 13.280; p = 0.010). The spatiotemporal analysis revealed increases in PM₂.₅ and PM₁₀ concentrations during morning and evening hours due to traffic and industrial activities, with the highest concentrations recorded in Lubang Buaya (PM₂.₅ = 287 µg/m³; PM₁₀ = 187 µg/m³). Meanwhile, meteorological fluctuations driven by daily weather variations affected pollutant dispersion, particularly at Halim Perdanakusuma, where humidity reached 100%, temperature peaked at 38°C, and wind direction was 999°. Overall, CatBoost demonstrated high effectiveness, accuracy, and statistical relevance, making it a robust choice for spatiotemporal AQI prediction modeling in DKI Jakarta.
 
-## Business Understanding
-This research provides accurate assessments of PM2.5 levels across urban areas, supporting strategies to control pollution from industry and transportation by integrating pollutant concentrations with climate conditions that often exceed who’s recommended limits, the system can capture both rapid fluctuations and long-term seasonal patterns. The forecasting ability directly supports:
+## Research Benefits
+In the short term, the results of this study are expected to function as an information system for monitoring air quality conditions in DKI Jakarta by providing alerts to the public when pollutant concentrations or meteorological elements (weather) are predicted to exceed WHO-recommended limits during traffic and industrial peak hours.
 
-- Emission Management: where local governments can temporarily restrict heavy trucks or industrial activities when high pollution levels are predicted
-- Public Health Advisory: enabling early alerts when pm2.5 is expected to exceed 5 μg/m³ annually, potentially reducing hospital visits for respiratory problems by 3–5% and saving jakarta rp 50–100 billion in healthcare costs each year [3]
-- Sustainable Urban Planning: here long-term predictions guide low-emission zones, green spaces, and relocation of sensitive facilities by linking spatio-temporal correlations between pollutants and weather elements, this approach enhances prediction accuracy and strengthens data-driven decision-making for fast-response systems in Jakarta’s most vulnerable areas.
-  
-By linking spatiotemporal correlations between pollutants and weather elements, this approach enhances prediction accuracy and strengthens decision-making for fast-response systems in Jakarta’s most vulnerable areas.
+In the long term, this system is expected to contribute to urban environmental planning and management in DKI Jakarta, such as:
+- Establishing low-emission zones by restricting motorized vehicles in areas with high levels of air pollution.
+- Developing environmentally friendly transportation systems, such as expanding public transportation networks and promoting the use of electric vehicles.
+- Optimizing the use of Green Open Spaces (Ruang Terbuka Hijau) as pollutant-absorbing areas and as a means to improve air quality in urban environments.
 
-## Setup Environment - Anaconda
+## Setup Environment - Miniconda3
 ```
 conda env create -f environment.yml
 conda activate aqi-env
 
 ```
 
-## Run steamlit app
+## Run Streamlit App Locally
 ```
 streamlit run catboostatt_dashboard.py
 
 ```
 
+## Run Steamlit App 
+```
+https://catboostatt-aqi-prediction.streamlit.app/
+
+```
 
 Copyright © Fauzia Dhiyaa' Farros 2025
