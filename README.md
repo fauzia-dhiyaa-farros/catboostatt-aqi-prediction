@@ -27,10 +27,13 @@ streamlit run catboostatt_dashboard.py
 ```
 
 ## Run Apps Online
-Back-up or relaunch app first to restart, then go to:
+Back-up or relaunch apps first to restart, then go to:
 ```
 https://catboostatt-aqi-prediction.streamlit.app/
 
 ```
+
+
+
 
 Copyright © Fauzia Dhiyaa' Farros 2025. All Rights Reserved.
