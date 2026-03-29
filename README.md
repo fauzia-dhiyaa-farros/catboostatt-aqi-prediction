@@ -36,4 +36,4 @@ https://catboostatt-aqi-prediction.streamlit.app/
 
 
 
-CatBoost-Attention AQI Prediction Dashboard © Fauzia Dhiyaa' Farros 2025. All Rights Reserved.
+CatBoost-Attention AQI Prediction Dashboard © Fauzia Dhiyaa' Farros 2025 | All Rights Reserved.
